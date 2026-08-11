@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- ♿ ACCESIBILIDAD 3.4 - ORIENTACIÓN
+         El viewport permite que el contenido se adapte
+         a diferentes tamaños de pantalla y dispositivos. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Cocina Fácil ofrece recetas sencillas, accesibles y fáciles de preparar para todos."
+    >
+
+    <title>Cocina Fácil - Recetas para todos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+     PANEL DE ACCESIBILIDAD
+     =====================================================
+
+     ♿ ACCESIBILIDAD 4.4 - CAMBIO DE TAMAÑO DEL TEXTO
+
+     Permite aumentar o disminuir el tamaño del texto
+     sin depender únicamente del zoom del navegador.
+     ===================================================== -->
+
+<div class="panel-accesibilidad">
+
+    <p>
+        <strong>Opciones de accesibilidad</strong>
+    </p>
+
+    <button
+        type="button"
+        onclick="cambiarTamañoTexto(-10)"
+        aria-label="Disminuir el tamaño del texto"
+    >
+        A-
+    </button>
+
+    <button
+        type="button"
+        onclick="cambiarTamañoTexto(10)"
+        aria-label="Aumentar el tamaño del texto"
+    >
+        A+
+    </button>
+
+</div>
+
+    <!-- =====================================================
+         ♿ ACCESIBILIDAD 3.1 - INFORMACIÓN Y RELACIONES
+         
+         Se utilizan etiquetas HTML semánticas como:
+         header, nav, main, section, article y footer.
+         
+         Estas etiquetas permiten que las tecnologías
+         de asistencia comprendan la estructura del sitio.
+         ===================================================== -->
+
+    <header>
+
+        <div class="contenedor-header">
+
+
+            <!-- ♿ ACCESIBILIDAD 3.3 - CARACTERÍSTICAS SENSORIALES
+                 
+                 El nombre del sitio no depende únicamente
+                 del ícono o del color.
+                 
+                 También existe texto visible: "Cocina Fácil". -->
+
+            <a
+                href="#inicio"
+                class="logo"
+                aria-label="Cocina Fácil - Ir al inicio"
+            >
+
+                <span aria-hidden="true">🍳</span>
+
+                <span>Cocina Fácil</span>
+
+            </a>
+
+
+            <!-- =================================================
+                 ♿ ACCESIBILIDAD 3.1 - INFORMACIÓN Y RELACIONES
+                 
+                 Se utiliza la etiqueta nav para identificar
+                 correctamente el menú de navegación.
+                 ================================================= -->
+
+            <nav aria-label="Navegación principal">
+
+                <ul>
+
+                    <li>
+                        <a href="#inicio">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="#recetas">Recetas</a>
+                    </li>
+
+                    <li>
+                        <a href="#consejos">Consejos</a>
+                    </li>
+
+                    <li>
+                        <a href="#contacto">Contacto</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         ♿ ACCESIBILIDAD 3.1 - INFORMACIÓN Y RELACIONES
+         
+         main identifica el contenido principal de la página.
+         
+         ♿ ACCESIBILIDAD 3.2 - ORDEN ADECUADO
+         
+         Los elementos están organizados en un orden lógico
+         dentro del DOM para que puedan ser leídos de arriba
+         hacia abajo.
+         ===================================================== -->
+
+    <main id="inicio">
+
+
+        <!-- =====================================================
+             SECCIÓN PRINCIPAL
+             ===================================================== -->
+
+        <section
+            class="hero"
+            aria-labelledby="titulo-principal"
+        >
+
+            <div class="hero-contenido">
+
+                <p class="etiqueta">
+                    RECETAS PARA TODOS
+                </p>
+
+
+                <!-- ♿ ACCESIBILIDAD 3.1 - USO CORRECTO DE ENCABEZADOS
+                     
+                     H1 representa el título principal de la página. -->
+
+                <h1 id="titulo-principal">
+                    Cocina Fácil
+                </h1>
+
+
+                <p>
+                    Descubre recetas sencillas, deliciosas y fáciles
+                    de preparar. Aprende paso a paso y disfruta de
+                    la cocina.
+                </p>
+
+
+                <!-- ♿ ACCESIBILIDAD 3.3 - CARACTERÍSTICAS SENSORIALES
+                     
+                     La acción no depende solamente del color.
+                     El botón contiene texto que indica claramente
+                     qué acción realiza. -->
+
+                <a
+                    href="#recetas"
+                    class="boton"
+                >
+                    Explorar recetas
+                </a>
+
+            </div>
+
+
+            <div class="hero-imagen">
+
+
+                <!-- =================================================
+                     ♿ ACCESIBILIDAD 1.1 - CONTENIDO NO TEXTUAL
+                     
+                     La imagen posee un texto alternativo mediante
+                     el atributo alt.
+                     
+                     El alt describe el propósito de la imagen.
+                     ================================================= -->
+
+                <img
+                    src="assets/img/hero.jpg"
+                    alt="Mesa con diferentes alimentos preparados y utensilios de cocina"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SECCIÓN RECETAS
+             ===================================================== -->
+
+        <section
+            id="recetas"
+            aria-labelledby="titulo-recetas"
+        >
+
+            <div class="seccion-encabezado">
+
+                <p class="etiqueta">
+                    RECETAS
+                </p>
+
+
+                <!-- ♿ ACCESIBILIDAD 3.1 - JERARQUÍA DE ENCABEZADOS -->
+
+                <h2 id="titulo-recetas">
+                    Elige tu próxima receta
+                </h2>
+
+                <p>
+                    Encuentra preparaciones sencillas con
+                    ingredientes fáciles de conseguir.
+                </p>
+
+            </div>
+
+
+
+            <div class="recetas-grid">
+
+
+                <!-- =================================================
+                     RECETA 1
+                     ================================================= -->
+
+                <article class="tarjeta-receta">
+
+
+                    <!-- ♿ ACCESIBILIDAD 1.1
+                         Texto alternativo para la imagen. -->
+
+                    <img
+                        src="assets/img/espaguetis.jpg"
+                        alt="Plato de espaguetis con salsa de tomate y queso"
+                    >
+
+
+                    <div class="tarjeta-contenido">
+
+
+                        <!-- ♿ ACCESIBILIDAD 3.1
+                             Jerarquía correcta: H1 → H2 → H3 -->
+
+                        <h3>
+                            Espaguetis con tomate
+                        </h3>
+
+                        <p>
+                            Una receta sencilla de pasta con
+                            salsa de tomate y queso.
+                        </p>
+
+
+                        <!-- ♿ ACCESIBILIDAD 3.3
+                             La acción se identifica mediante texto,
+                             no únicamente mediante color o forma. -->
+
+                        <a
+                            href="#espaguetis"
+                            class="boton-secundario"
+                        >
+                            Ver receta
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     RECETA 2
+                     ================================================= -->
+
+                <article class="tarjeta-receta">
+
+                    <!-- ♿ ACCESIBILIDAD 1.1 -->
+
+                    <img
+                        src="assets/img/hamburguesa.jpg"
+                        alt="Hamburguesa casera con lechuga, tomate y queso"
+                    >
+
+                    <div class="tarjeta-contenido">
+
+                        <h3>
+                            Hamburguesa casera
+                        </h3>
+
+                        <p>
+                            Aprende a preparar una hamburguesa
+                            casera de forma sencilla.
+                        </p>
+
+                        <a
+                            href="#hamburguesa"
+                            class="boton-secundario"
+                        >
+                            Ver receta
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     RECETA 3
+                     ================================================= -->
+
+                <article class="tarjeta-receta">
+
+                    <!-- ♿ ACCESIBILIDAD 1.1 -->
+
+                    <img
+                        src="assets/img/pancakes.jpg"
+                        alt="Pancakes apilados con frutas y miel"
+                    >
+
+                    <div class="tarjeta-contenido">
+
+                        <h3>
+                            Pancakes
+                        </h3>
+
+                        <p>
+                            Pancakes suaves y fáciles de preparar
+                            para el desayuno.
+                        </p>
+
+                        <a
+                            href="#pancakes"
+                            class="boton-secundario"
+                        >
+                            Ver receta
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             RECETA DESTACADA
+             ===================================================== -->
+
+        <section
+            id="espaguetis"
+            aria-labelledby="titulo-espaguetis"
+        >
+
+            <div class="receta-detalle">
+
+                <p class="etiqueta">
+                    RECETA DESTACADA
+                </p>
+
+
+                <!-- ♿ ACCESIBILIDAD 3.1
+                     Jerarquía correcta de encabezados. -->
+
+                <h2 id="titulo-espaguetis">
+                    Espaguetis con tomate
+                </h2>
+
+                <p>
+                    Una receta sencilla para preparar un plato
+                    delicioso en casa.
+                </p>
+
+
+                <!-- INGREDIENTES -->
+
+                <div>
+
+                    <h3>
+                        Ingredientes
+                    </h3>
+
+                    <ul>
+
+                        <li>200 gramos de espaguetis</li>
+                        <li>2 tomates</li>
+                        <li>1 cucharada de aceite</li>
+                        <li>50 gramos de queso</li>
+                        <li>Sal al gusto</li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- PREPARACIÓN -->
+
+                <div>
+
+                    <h3>
+                        Preparación
+                    </h3>
+
+
+                    <!-- ♿ ACCESIBILIDAD 3.2 - ORDEN ADECUADO
+                         
+                         Se utiliza una lista ordenada porque los
+                         pasos tienen una secuencia lógica. -->
+
+                    <ol>
+
+                        <li>
+                            Cocina los espaguetis siguiendo
+                            las instrucciones del paquete.
+                        </li>
+
+                        <li>
+                            Prepara la salsa de tomate en
+                            una sartén.
+                        </li>
+
+                        <li>
+                            Mezcla la pasta con la salsa.
+                        </li>
+
+                        <li>
+                            Agrega queso y sirve.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ♿ ACCESIBILIDAD 2.1 - SOLO AUDIO
+             
+             El contenido de audio cuenta con controles.
+             
+             También existe una alternativa textual mediante
+             la transcripción.
+             
+             ♿ ACCESIBILIDAD 4.2 - CONTROL DEL AUDIO
+             
+             El elemento audio utiliza "controls", permitiendo
+             al usuario reproducir y pausar el contenido.
+             ===================================================== -->
+
+        <section
+            id="audio-receta"
+            aria-labelledby="titulo-audio"
+        >
+
+            <h2 id="titulo-audio">
+                Escucha la preparación
+            </h2>
+
+            <p>
+                Puedes escuchar una explicación de la receta
+                utilizando el reproductor de audio.
+            </p>
+
+
+            <audio controls>
+
+                <source
+                    src="assets/audio/receta-espaguetis.mp3"
+                    type="audio/mpeg"
+                >
+
+                Tu navegador no puede reproducir este audio.
+
+            </audio>
+
+
+            <!-- ♿ ACCESIBILIDAD 2.1
+                 TRANSCRIPCIÓN DEL AUDIO -->
+
+            <details>
+
+                <summary>
+                    Leer la transcripción del audio
+                </summary>
+
+                <div class="transcripcion">
+
+                    <p>
+                        Para preparar los espaguetis con tomate,
+                        primero cocina la pasta siguiendo las
+                        instrucciones del paquete.
+                    </p>
+
+                    <p>
+                        Después prepara la salsa de tomate en
+                        una sartén y mezcla la pasta con la salsa.
+                    </p>
+
+                    <p>
+                        Finalmente agrega queso al gusto y sirve
+                        el plato.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ♿ ACCESIBILIDAD 2.2 - MULTIMEDIA
+             
+             Esta sección queda preparada para un contenido
+             que combine VIDEO + AUDIO.
+             
+             El video tendrá:
+             - controles
+             - subtítulos mediante archivo VTT
+             - texto alternativo mediante aria-label
+             
+             Más adelante agregaremos el archivo MP4 y VTT
+             correspondientes.
+             ===================================================== -->
+
+        <section
+            id="multimedia"
+            aria-labelledby="titulo-multimedia"
+        >
+
+            <h2 id="titulo-multimedia">
+                Video: preparación de la receta
+            </h2>
+
+            <p>
+                Aprende visualmente cómo preparar los espaguetis
+                paso a paso.
+            </p>
+
+
+            <video
+                controls
+                preload="metadata"
+                aria-label="Video sobre la preparación de espaguetis con tomate"
+            >
+
+                <source
+                    src="assets/video/receta-espaguetis.mp4"
+                    type="video/mp4"
+                >
+
+
+                <!-- ♿ ACCESIBILIDAD 2.2
+                     SUBTÍTULOS -->
+
+                <track
+                    kind="captions"
+                    src="assets/video/receta-espaguetis.vtt"
+                    srclang="es"
+                    label="Español"
+                    default
+                >
+
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+
+            <p class="descripcion-video">
+
+                El video muestra los pasos para cocinar
+                espaguetis con salsa de tomate.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ♿ ACCESIBILIDAD 3.3 - CARACTERÍSTICAS SENSORIALES
+             
+             Las instrucciones utilizan texto claro y no dependen
+             exclusivamente de color, ubicación, forma o sonido.
+             ===================================================== -->
+
+        <section
+            id="hamburguesa"
+            aria-labelledby="titulo-hamburguesa"
+        >
+
+            <h2 id="titulo-hamburguesa">
+                Hamburguesa casera
+            </h2>
+
+            <p>
+                Una preparación sencilla para disfrutar una
+                hamburguesa hecha en casa.
+            </p>
+
+            <h3>
+                Ingredientes
+            </h3>
+
+            <ul>
+
+                <li>Pan para hamburguesa</li>
+                <li>Carne para hamburguesa</li>
+                <li>Lechuga</li>
+                <li>Tomate</li>
+                <li>Queso</li>
+
+            </ul>
+
+        </section>
+
+
+
+        <section
+            id="pancakes"
+            aria-labelledby="titulo-pancakes"
+        >
+
+            <h2 id="titulo-pancakes">
+                Pancakes
+            </h2>
+
+            <p>
+                Una opción sencilla para el desayuno.
+            </p>
+
+            <h3>
+                Ingredientes
+            </h3>
+
+            <ul>
+
+                <li>Harina</li>
+                <li>Leche</li>
+                <li>Huevo</li>
+                <li>Azúcar</li>
+                <li>Frutas al gusto</li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONSEJOS
+             ===================================================== -->
+
+        <section
+            id="consejos"
+            aria-labelledby="titulo-consejos"
+        >
+
+            <h2 id="titulo-consejos">
+                Consejos para cocinar
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Lee la receta completa antes de comenzar.
+                </li>
+
+                <li>
+                    Prepara todos los ingredientes antes de cocinar.
+                </li>
+
+                <li>
+                    Utiliza utensilios adecuados para cada preparación.
+                </li>
+
+                <li>
+                    Mantén limpia y organizada tu zona de trabajo.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FORMULARIO
+             ===================================================== -->
+
+        <section
+            id="contacto"
+            aria-labelledby="titulo-contacto"
+        >
+
+            <div class="seccion-encabezado">
+
+                <p class="etiqueta">
+                    CONTACTO
+                </p>
+
+                <h2 id="titulo-contacto">
+                    Sugiere una receta
+                </h2>
+
+                <p>
+                    ¿Tienes una receta que te gustaría compartir?
+                    Envíanos tu sugerencia.
+                </p>
+
+            </div>
+
+
+            <!-- ♿ ACCESIBILIDAD 3.5
+                 
+                 IDENTIFICAR EL PROPÓSITO DE ENTRADA
+                 
+                 Los campos utilizan:
+                 - label
+                 - type
+                 - autocomplete
+                 
+                 Esto permite que el navegador y tecnologías
+                 de asistencia identifiquen el propósito
+                 de cada campo. -->
+
+            <form>
+
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label for="telefono">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        autocomplete="tel"
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label for="sugerencia">
+                        Nombre de la receta que quieres sugerir
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sugerencia"
+                        name="sugerencia"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label for="comentarios">
+                        Comentarios
+                    </label>
+
+                    <textarea
+                        id="comentarios"
+                        name="comentarios"
+                        rows="5"
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- ♿ ACCESIBILIDAD 3.3
+                     El botón tiene texto y no depende únicamente
+                     del color o de un ícono. -->
+
+                <button type="submit">
+                    Enviar sugerencia
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         ♿ ACCESIBILIDAD 3.1 - INFORMACIÓN Y RELACIONES
+         
+         footer identifica correctamente el pie de página.
+         ===================================================== -->
+
+    <footer>
+
+        <div class="contenedor-footer">
+
+            <p>
+                <strong>Cocina Fácil</strong>
+            </p>
+
+            <p>
+                Recetas sencillas y accesibles para todos.
+            </p>
+
+            <p>
+                &copy; 2026 Cocina Fácil. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1007 @@
+/* =========================================================
+   COCINA FÁCIL
+   HOJA DE ESTILOS
+   ========================================================= */
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.3 - CONTRASTE MÍNIMO
+
+   Los colores principales se seleccionan buscando un
+   contraste suficiente entre texto y fondo.
+
+   La guía indica un mínimo de 4.5:1 para texto normal.
+   ========================================================= */
+
+:root {
+
+    --color-fondo: #FFF8F0;
+
+    --color-blanco: #FFFFFF;
+
+    --color-texto: #1F2937;
+
+    --color-texto-secundario: #374151;
+
+    --color-principal: #92400E;
+
+    --color-principal-oscuro: #78350F;
+
+    --color-verde: #166534;
+
+    --color-borde: #374151;
+
+    --color-fondo-suave: #FEF3C7;
+
+    --color-error: #B91C1C;
+
+}
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* ♿ ACCESIBILIDAD 4.6 - REAJUSTE
+   No utilizamos anchos fijos para el contenido principal.
+   Esto permite que la página se reorganice al aumentar
+   el zoom. */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.8 - ESPACIADO DEL TEXTO
+
+   line-height:
+   mínimo recomendado: 1.5
+
+   letter-spacing:
+   se deja espacio adicional entre letras.
+
+   word-spacing:
+   se deja espacio adicional entre palabras.
+*/
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: var(--color-fondo);
+
+    color: var(--color-texto);
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.02em;
+
+    word-spacing: 0.08em;
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.5 - IMÁGENES DE TEXTO
+
+   No se utiliza texto importante dentro de imágenes.
+
+   Todo el contenido textual importante está escrito
+   directamente en HTML.
+   ========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
+.contenedor-header,
+.contenedor-footer,
+main {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+main {
+
+    padding: 0 1.5rem;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+
+    background-color: var(--color-blanco);
+
+    border-bottom: 3px solid var(--color-principal);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+
+.contenedor-header {
+
+    min-height: 80px;
+
+    padding: 1rem 1.5rem;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 2rem;
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    color: var(--color-principal-oscuro);
+
+    text-decoration: none;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.9 - HOVER Y FOCUS
+
+   Los elementos interactivos tienen estados visibles
+   tanto para mouse como para teclado.
+   ========================================================= */
+
+.logo:hover {
+
+    text-decoration: underline;
+
+}
+
+
+.logo:focus-visible {
+
+    outline: 4px solid #1D4ED8;
+
+    outline-offset: 4px;
+
+    border-radius: 4px;
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+nav ul {
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1.5rem;
+
+}
+
+
+nav a {
+
+    color: var(--color-texto);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    padding: 0.5rem;
+
+}
+
+
+nav a:hover {
+
+    color: var(--color-principal);
+
+    text-decoration: underline;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.9 - FOCUS */
+
+nav a:focus-visible {
+
+    outline: 3px solid #1D4ED8;
+
+    outline-offset: 4px;
+
+    border-radius: 4px;
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 3rem;
+
+    padding: 5rem 0;
+
+}
+
+
+.hero-contenido {
+
+    max-width: 600px;
+
+}
+
+
+.hero-contenido h1 {
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-top: 0.5rem;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+.hero-contenido p {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 2rem;
+
+}
+
+
+.hero-imagen img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    border-radius: 1rem;
+
+}
+
+
+/* =========================================================
+   ETIQUETAS
+   ========================================================= */
+
+.etiqueta {
+
+    color: var(--color-verde);
+
+    font-weight: 700;
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 0.5rem;
+
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.boton,
+button {
+
+    display: inline-block;
+
+    background-color: var(--color-principal);
+
+    color: var(--color-blanco);
+
+    border: 3px solid var(--color-principal);
+
+    border-radius: 0.5rem;
+
+    padding: 0.8rem 1.2rem;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.1 - USO DEL COLOR
+
+   El botón no se diferencia únicamente mediante color.
+   También tiene texto, borde y cambios visuales. */
+
+.boton:hover,
+button:hover {
+
+    background-color: var(--color-principal-oscuro);
+
+    border-color: var(--color-principal-oscuro);
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.9 - FOCUS */
+
+.boton:focus-visible,
+button:focus-visible {
+
+    outline: 4px solid #1D4ED8;
+
+    outline-offset: 4px;
+
+}
+
+
+.boton-secundario {
+
+    display: inline-block;
+
+    color: var(--color-principal-oscuro);
+
+    font-weight: 700;
+
+    text-decoration: underline;
+
+    padding: 0.5rem 0;
+
+}
+
+
+.boton-secundario:hover {
+
+    color: var(--color-verde);
+
+}
+
+
+.boton-secundario:focus-visible {
+
+    outline: 3px solid #1D4ED8;
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+
+section {
+
+    padding: 4rem 0;
+
+}
+
+
+.seccion-encabezado {
+
+    max-width: 700px;
+
+    margin-bottom: 2rem;
+
+}
+
+
+h2 {
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.2;
+
+    margin-top: 0.5rem;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+h3 {
+
+    font-size: 1.4rem;
+
+    line-height: 1.3;
+
+    margin-top: 1.5rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 3.4 - ORIENTACIÓN
+
+   Se utilizan unidades relativas y un diseño flexible.
+   ========================================================= */
+
+
+/* =========================================================
+   TARJETAS DE RECETAS
+   ========================================================= */
+
+.recetas-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 2rem;
+
+}
+
+
+.tarjeta-receta {
+
+    background-color: var(--color-blanco);
+
+    border: 2px solid var(--color-borde);
+
+    border-radius: 1rem;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.7 - CONTRASTE DE ELEMENTOS GRÁFICOS
+
+   El borde de las tarjetas es suficientemente visible
+   respecto al fondo. */
+
+.tarjeta-receta img {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.tarjeta-contenido {
+
+    padding: 1.5rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    flex-grow: 1;
+
+}
+
+
+.tarjeta-contenido p {
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+/* =========================================================
+   RECETA DETALLADA
+   ========================================================= */
+
+.receta-detalle {
+
+    background-color: var(--color-blanco);
+
+    border: 2px solid var(--color-borde);
+
+    border-radius: 1rem;
+
+    padding: 2rem;
+
+}
+
+
+.receta-detalle ul,
+.receta-detalle ol {
+
+    padding-left: 2rem;
+
+}
+
+
+.receta-detalle li {
+
+    margin-bottom: 0.8rem;
+
+}
+
+
+/* =========================================================
+   AUDIO
+   ========================================================= */
+
+audio {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 1rem 0;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.2 - CONTROL DEL AUDIO
+
+   El elemento HTML audio utiliza controls.
+   No se utiliza autoplay. */
+
+
+details {
+
+    margin-top: 1.5rem;
+
+    border: 2px solid var(--color-borde);
+
+    border-radius: 0.5rem;
+
+    background-color: var(--color-fondo-suave);
+
+}
+
+
+summary {
+
+    cursor: pointer;
+
+    padding: 1rem;
+
+    font-weight: 700;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.9 - HOVER / FOCUS */
+
+summary:hover {
+
+    text-decoration: underline;
+
+}
+
+
+summary:focus-visible {
+
+    outline: 3px solid #1D4ED8;
+
+    outline-offset: 3px;
+
+}
+
+
+.transcripcion {
+
+    padding: 0 1rem 1rem;
+
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+video {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    height: auto;
+
+    border: 3px solid var(--color-borde);
+
+    border-radius: 0.75rem;
+
+}
+
+
+.descripcion-video {
+
+    max-width: 800px;
+
+    margin-top: 1rem;
+
+}
+
+
+/* =========================================================
+   LISTAS
+   ========================================================= */
+
+ul,
+ol {
+
+    line-height: 1.6;
+
+}
+
+
+li {
+
+    margin-bottom: 0.5rem;
+
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+form {
+
+    max-width: 700px;
+
+    background-color: var(--color-blanco);
+
+    border: 2px solid var(--color-borde);
+
+    border-radius: 1rem;
+
+    padding: 2rem;
+
+}
+
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 3.5
+
+   Cada campo tiene un label asociado mediante "for"
+   y el input correspondiente mediante "id". */
+
+
+label {
+
+    font-weight: 700;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 0.8rem;
+
+    border: 3px solid var(--color-borde);
+
+    border-radius: 0.4rem;
+
+    background-color: var(--color-blanco);
+
+    color: var(--color-texto);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.7
+   El borde de los campos debe ser suficientemente
+   visible respecto al fondo. */
+
+
+input:hover,
+textarea:hover {
+
+    border-color: var(--color-principal);
+
+}
+
+
+/* ♿ ACCESIBILIDAD 4.9 - FOCUS */
+
+input:focus,
+textarea:focus {
+
+    outline: none;
+
+    border-color: #1D4ED8;
+
+    box-shadow: 0 0 0 3px #BFDBFE;
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.1 - USO DEL COLOR
+   ♿ ACCESIBILIDAD 3.3 - CARACTERÍSTICAS SENSORIALES
+
+   Si posteriormente mostramos errores en el formulario,
+   nunca utilizaremos solamente color rojo.
+
+   También mostraremos un mensaje textual.
+   ========================================================= */
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    margin-top: 3rem;
+
+    background-color: var(--color-texto);
+
+    color: var(--color-blanco);
+
+}
+
+
+.contenedor-footer {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 2.5rem 1.5rem;
+
+}
+
+
+.contenedor-footer p {
+
+    margin: 0 0 0.75rem;
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.8 - ESPACIADO DEL TEXTO
+
+   La estructura general utiliza:
+   - line-height amplio
+   - separación entre párrafos
+   - letter-spacing
+   - word-spacing
+
+   Esto permite que el contenido pueda ser personalizado
+   por el usuario mediante herramientas de asistencia.
+   ========================================================= */
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 3.4 - ORIENTACIÓN
+   ♿ ACCESIBILIDAD 4.6 - REAJUSTE
+
+   Media queries para adaptar el contenido a pantallas
+   pequeñas y diferentes orientaciones.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 3rem 0;
+
+    }
+
+
+    .recetas-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .contenedor-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    main {
+
+        padding: 0 1rem;
+
+    }
+
+
+    .recetas-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    nav ul {
+
+        gap: 0.75rem;
+
+    }
+
+
+    nav a {
+
+        display: inline-block;
+
+        padding: 0.4rem;
+
+    }
+
+
+    section {
+
+        padding: 3rem 0;
+
+    }
+
+
+    .hero-contenido h1 {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    form {
+
+        padding: 1.25rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.9 - FOCUS VISIBLE
+
+   El foco del teclado siempre tiene una indicación visual
+   clara.
+   ========================================================= */
+
+:focus-visible {
+
+    outline: 3px solid #1D4ED8;
+
+    outline-offset: 3px;
+
+}
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.4 - CAMBIO DE TAMAÑO DEL TEXTO
+
+   Se evita bloquear el zoom del navegador.
+
+   No utilizamos:
+       user-scalable=no
+
+   El usuario puede ampliar la página utilizando el zoom
+   del navegador.
+   ========================================================= */
+
+
+/* =========================================================
+   ♿ ACCESIBILIDAD 4.6 - REAJUSTE
+
+   Evitamos elementos con un ancho fijo que puedan provocar
+   doble desplazamiento horizontal al aumentar el zoom.
+   ========================================================= */
+
+img,
+video,
+audio,
+input,
+textarea {
+
+    max-width: 100%;
+
+}

@@ -671,20 +671,12 @@ summary:focus-visible {
    VIDEO
    ========================================================= */
 
-video {
-
-    display: block;
-
-    width: 100%;
-
-    max-width: 800px;
-
+#multimedia video {
+    width: 450px;
+    max-width: 100%;
     height: auto;
-
-    border: 3px solid var(--color-borde);
-
-    border-radius: 0.75rem;
-
+    display: block;
+    margin: 20px auto;
 }
 
 
